@@ -25,12 +25,10 @@ end
   end
 
   def self.find_or_create_by_name(artist_name)
-    @@all.each do |artist|
-      if artist.name == artist_name
-        return artist
-      end
-      end
-       self.new(artist_name)
+    artist = @@all.find do |artist|
+      artist.name == artist_name
+    end
+      artist ||= self.new(artist_name)
   end
 
   def print_songs
