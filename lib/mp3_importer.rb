@@ -9,13 +9,12 @@ class MP3Importer
    end
 
    def files
-    Dir.glob("#{@path}/*.mp3").map do |files|
-       files.split("/").last
+     @files ||= Dir.glob("#{path}/*.mp3").collect{ |f| f.gsub("#{path}/", "") }
      end
    end
 
    def import
-     self.files.each do |file_name|
+     files.each do |file_name|
        Song.new_by_filename(file_name)
     end
   end
