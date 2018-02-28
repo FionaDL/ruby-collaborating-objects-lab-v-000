@@ -28,10 +28,9 @@ end
     @@all.each do |artist|
       if artist.name == artist_name
         return artist
-      else 
-        return self.new(artist_name)
       end
-    end
+      end
+       self.new(artist_name)
   end
 
   def print_songs
