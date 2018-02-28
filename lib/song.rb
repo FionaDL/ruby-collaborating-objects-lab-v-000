@@ -16,7 +16,6 @@ end
     split_file = filename.split (" - ")
     name_of_artist = split_file[0]
     song_name = split_file[1]
-    binding.pry
     new_song = self.new(song_name)
     new_song.artist_name = name_of_artist
     new_song
